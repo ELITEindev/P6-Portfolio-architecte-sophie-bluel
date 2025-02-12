@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modifier - Sophie Bluel - Architecte d'intérieur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/edit.css" />
+    <link rel="stylesheet" href="./assets/css/modal.css" />
+    <script type="module" src="./assets/js/index.js" defer></script>
+    <script type="module" src="./assets/js/modal.js" defer></script>
+    <script type="module" src="./assets/js/delete.js" defer></script>
+    <script type="module" src="./assets/js/modal2.js" defer></script>
+  </head>
+  <body>
+    <aside
+      id="modal1"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="modal-title"
+      style="display: none"
+    >
+      <div class="modal-wrapper stop-modal">
+        <div class="modal-content">
+          <img
+            src="assets/icons/close-modal.svg"
+            alt="icône croix pour fermer la fenêtre de la modale"
+            class="close-modal"
+          />
+          <h2 class="modal-title">Galerie photo</h2>
+          <div class="modal-gallery"></div>
+          <hr />
+          <button class="btn-add-project">Ajouter une photo</button>
+        </div>
+        <div class="modal-add-project">
+          <img
+            src="assets/icons/arrow-back.svg"
+            alt="Icône flèche retour"
+            class="modal-arrow"
+          />
+          <img
+            src="assets/icons/close-modal.svg"
+            alt="Icône croix pour fermer la modale"
+            class="close-modal"
+          />
+          <h2 class="modal-title">Ajout photo</h2>
+          <form class="modal-upload-image-form">
+            <label for="file" class="modal-add-image-form">
+              <img src="assets/icons/add-image.svg" alt="" />
+              <span class="modal-add-image-button">+ Ajouter photo</span>
+              <span class="modal-image-format">jpg, png: 4mo max</span>
+            </label>
+            <label for="modal-title-image">Titre</label>
+            <input
+              type="text"
+              id="modal-title-image"
+              name="modal-title-image"
+            />
+            <label for="modal-categories">Catégories</label>
+            <select name="modal-categories" id="modal-categories"></select>
+            <hr />
+            <button class="modal-form-confirm-button" disabled>Valider</button>
+          </form>
+        </div>
+      </div>
+    </aside>
+    <div class="edit-header">
+      <div class="edit">
+        <img src="./assets/icons/icon_white.png" alt="" />
+        <p>Mode édition</p>
+      </div>
+    </div>
+    <header>
+      <a href="#"
+        ><h1>Sophie Bluel <span>Architecte d'intérieur</span></h1></a
+      >
+      <nav>
+        <ul>
+          <li><a href="#portfolio">projets</a></li>
+          <li><a href="#contact">contact</a></li>
+          <li><a href="./index.html" class="logout">logout</a></li>
+          <li>
+            <a href="#"
+              ><img src="./assets/icons/instagram.png" alt="Instagram"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="introduction">
+        <figure>
+          <img src="./assets/images/sophie-bluel.png" alt="" />
+        </figure>
+        <article>
+          <h2>Designer d'espace</h2>
+          <p>
+            Je raconte votre histoire, je valorise vos idées. Je vous accompagne
+            de la conception à la livraison finale du chantier.
+          </p>
+          <p>
+            Chaque projet sera étudié en commun, de façon à mettre en valeur les
+            volumes, les matières et les couleurs dans le respect de l’esprit
+            des lieux et le choix adapté des matériaux. Le suivi du chantier
+            sera assuré dans le souci du détail, le respect du planning et du
+            budget.
+          </p>
+          <p>
+            En cas de besoin, une équipe pluridisciplinaire peut-être constituée
+            : architecte DPLG, décorateur(trice)
+          </p>
+        </article>
+      </section>
+      <section id="portfolio">
+        <div class="edit-portfolio">
+          <h2>Mes Projets</h2>
+          <div class="edit-project">
+            <img src="./assets/icons/icon-black.png" alt="" />
+            <a href="#modal1" class="modal-trigger"> modifier </a>
+          </div>
+        </div>
+        <div class="gallery">
+          <!-- deleted all figure tags to replace them by data dynamically retrieved from http api -->
+        </div>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Vous avez un projet ? Discutons-en !</p>
+        <form action="#" method="post">
+          <label for="name">Nom</label>
+          <input type="text" name="name" id="name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+          <input type="submit" value="Envoyer" />
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#">Mentions Légales</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
