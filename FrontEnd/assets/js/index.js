@@ -6,6 +6,11 @@ const mainGallery = document.querySelector('.gallery');
 const filter = document.querySelector('.filter');
 
 const logoutButton = document.querySelector('.logout');
+const loginLink = document.querySelector('#login-link');
+const logoutLink = document.querySelector('#logout-link');
+const editHeader = document.querySelector('#edit-header');
+const editPortfolio = document.querySelector('#edit-portfolio');
+const portfolioTitle = document.querySelector('#portfolio-title');
 // console.log(logoutButton);
 
 /**********Functions to retrieve the gallery and categories from the API*********/
@@ -191,11 +196,38 @@ displayCategories();
 filterCategories();
 
 /**
+ * Function to check if user is logged in and show/hide admin elements
+ */
+function checkAdminStatus() {
+  const userToken = localStorage.getItem('user');
+  
+  if (userToken) {
+    // User is logged in - show admin elements
+    if (editHeader) editHeader.style.display = 'block';
+    if (editPortfolio) editPortfolio.style.display = 'block';
+    if (portfolioTitle) portfolioTitle.style.display = 'none';
+    if (loginLink) loginLink.style.display = 'none';
+    if (logoutLink) logoutLink.style.display = 'block';
+  } else {
+    // User is not logged in - hide admin elements
+    if (editHeader) editHeader.style.display = 'none';
+    if (editPortfolio) editPortfolio.style.display = 'none';
+    if (portfolioTitle) portfolioTitle.style.display = 'block';
+    if (loginLink) loginLink.style.display = 'block';
+    if (logoutLink) logoutLink.style.display = 'none';
+  }
+}
+
+/**
  * Adds a logout event to the logout button.
  * Removes the user from the session upon clicking the logout button.
  */
 if (logoutButton !== null) {
   logoutButton.addEventListener('click', () => {
     localStorage.removeItem('user');
+    checkAdminStatus(); // Update UI after logout
   });
 }
+
+// Check admin status on page load
+checkAdminStatus();

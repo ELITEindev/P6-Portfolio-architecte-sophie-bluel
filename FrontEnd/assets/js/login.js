@@ -38,9 +38,9 @@ async function login() {
       localStorage.setItem('user', userdata); // store the user token in localStorage
 
       // this code checks if the user's authentication token (localStorage.user) matches the token received from the server (userdata)
-      // if they match, it redirects the user to the "edit.html" page, suggesting that the user is authenticated.
+      // if they match, it redirects the user to the "index.html" page, suggesting that the user is authenticated.
       if (localStorage.user === userdata) {
-        document.location.href = 'edit.html';
+        document.location.href = 'index.html';
       }
       console.log(user);
       console.log(localStorage);
